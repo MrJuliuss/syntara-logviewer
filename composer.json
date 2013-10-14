@@ -1,15 +1,26 @@
 {
     "name": "mrjuliuss/syntara-logviewer",
-    "description": "",
+    "description": "Syntara Logviewer, a logviewer for Syntara admin package",
+    "keywords": [
+        "laravel",
+        "log viewer",
+        "log",
+        "logviewer",
+        "syntara"
+    ],
     "authors": [
         {
-            "name": "",
-            "email": ""
+            "name": "MrJuliuss",
+            "email": "julien.richarte@gmail.com"
         }
+    ],
+    "license": [
+        "MIT"
     ],
     "require": {
         "php": ">=5.3.0",
-        "illuminate/support": "4.0.x"
+        "illuminate/support": "4.0.x",
+        "kmd/logviewer": "dev-master"
     },
     "autoload": {
         "psr-0": {
