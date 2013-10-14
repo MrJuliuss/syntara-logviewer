@@ -1,6 +1,7 @@
 <?php namespace Mrjuliuss\SyntaraLogviewer;
 
 use Illuminate\Support\ServiceProvider;
+use Config;
 
 class SyntaraLogviewerServiceProvider extends ServiceProvider {
 
@@ -11,6 +12,11 @@ class SyntaraLogviewerServiceProvider extends ServiceProvider {
 	 */
 	protected $defer = false;
 
+	public function boot()
+	{
+		$this->package('mrjuliuss/syntara-logviewer');
+	}
+
 	/**
 	 * Register the service provider.
 	 *
@@ -18,7 +24,11 @@ class SyntaraLogviewerServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		//
+		//Load package config
+		$this->app['config']->package('kmd/logviewer', 'kmd/logviewer/config');
+
+		$this->app['config']->set('logviewer::base_url', 'dashboard/logviewer');
+		$this->app['config']->set('logviewer::filters.global', array('before' => 'basicAuth|hasPermissions:superuser'));
 	}
 
 	/**
@@ -30,5 +40,4 @@ class SyntaraLogviewerServiceProvider extends ServiceProvider {
 	{
 		return array();
 	}
-
 }
