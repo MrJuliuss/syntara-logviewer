@@ -29,12 +29,12 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-{{ lcfirst($files['sapi']) }}">
                                     {{ ($count > 1 ? $app . ' - ' . $files['sapi'] : $files['sapi']) }}
                                     </a>
                                 </h4>
                             </div>
-                            <div id="collapseOne" class="panel-collapse collapse in">
+                            <div id="collapse-{{ lcfirst($files['sapi']) }}" class="panel-collapse collapse in">
                                 <div class="panel-body">
                                     <ul class="nav nav-list">
                                         @foreach ($file as $f)
