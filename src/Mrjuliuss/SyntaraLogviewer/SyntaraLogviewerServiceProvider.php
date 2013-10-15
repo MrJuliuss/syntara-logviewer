@@ -15,6 +15,8 @@ class SyntaraLogviewerServiceProvider extends ServiceProvider {
 	public function boot()
 	{
 		$this->package('mrjuliuss/syntara-logviewer');
+		// include start file
+		include ( __DIR__ . '/../../start.php');
 	}
 
 	/**
@@ -29,6 +31,7 @@ class SyntaraLogviewerServiceProvider extends ServiceProvider {
 
 		$this->app['config']->set('logviewer::base_url', 'dashboard/logviewer');
 		$this->app['config']->set('logviewer::filters.global', array('before' => 'basicAuth|hasPermissions:superuser'));
+		$this->app['config']->set('logviewer::view', 'syntara-logviewer::viewer');
 	}
 
 	/**
