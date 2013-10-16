@@ -1,6 +1,6 @@
 <?php
 
-View::composer('syntara::layouts.dashboard.master', function($view)
+View::composer('syntara-logviewer::viewer', function($view)
 {
     $view->with('title', 'Logviewer');
     $view->with('breadcrumb',  array(

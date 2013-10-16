@@ -32,6 +32,7 @@ class SyntaraLogviewerServiceProvider extends ServiceProvider {
 		$this->app['config']->set('logviewer::base_url', 'dashboard/logviewer');
 		$this->app['config']->set('logviewer::filters.global', array('before' => 'basicAuth|hasPermissions:superuser'));
 		$this->app['config']->set('logviewer::view', 'syntara-logviewer::viewer');
+		$this->app['config']->set('logviewer::log_order', 'desc');
 	}
 
 	/**
