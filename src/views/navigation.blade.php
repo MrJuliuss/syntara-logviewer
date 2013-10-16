@@ -1,0 +1,1 @@
+<li class=""><a href="{{ URL::to('dashboard/logviewer'); }}"><i class="glyphicon glyphicon-list-alt"></i> <span>Logs</span></a></li>
