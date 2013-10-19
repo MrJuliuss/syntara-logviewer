@@ -33,6 +33,14 @@ class SyntaraLogviewerServiceProvider extends ServiceProvider {
 		$this->app['config']->set('logviewer::filters.global', array('before' => 'basicAuth|hasPermissions:superuser'));
 		$this->app['config']->set('logviewer::view', 'syntara-logviewer::viewer');
 		$this->app['config']->set('logviewer::log_order', 'desc');
+
+		 // add the install command to the application
+		$this->app['logviewer:install'] = $this->app->share(function($app)
+		{
+			return new Commands\InstallCommand($app);
+		});
+
+		$this->commands('logviewer:install');
 	}
 
 	/**
