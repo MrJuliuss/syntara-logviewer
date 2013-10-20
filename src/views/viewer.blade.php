@@ -9,9 +9,9 @@
     <div class="row">
         <div class="col-lg-12">
             <ul class="nav nav-pills">
-                <li class="{{ Request::segment(6) === '' || Request::segment(6) === 'all' ? 'active' : ''}}"><a href="/{{ $url . '/' . $path . '/' . $sapi_plain . '/' . $date . '/all' }}">All</a></li>
+                <li class="{{ Request::segment(6) === '' || Request::segment(6) === 'all' ? 'active' : ''}}"><a href="{{ Request::root() }}/{{ $url . '/' . $path . '/' . $sapi_plain . '/' . $date . '/all' }}">All</a></li>
                 @foreach ($levels as $level)
-                    <li class="{{ Request::segment(6) === $level ? 'active' : '' }}"><a href="/{{ $url . '/' . $path . '/' . $sapi_plain . '/' . $date . '/' . $level }}">{{ ucfirst(Lang::get('logviewer::logviewer.levels.' . $level)) }}</a></li>
+                    <li class="{{ Request::segment(6) === $level ? 'active' : '' }}"><a href="{{ Request::root() }}/{{ $url . '/' . $path . '/' . $sapi_plain . '/' . $date . '/' . $level }}">{{ ucfirst(Lang::get('logviewer::logviewer.levels.' . $level)) }}</a></li>
                 @endforeach
                 @if(!$empty)
                 <li class="pull-right">
@@ -43,7 +43,7 @@
                                     <ul class="nav nav-list">
                                         @foreach ($file as $f)
                                              <li class="list-group-item">
-                                                <a href="/{{ $url . '/' . $app . '/' . $type . '/' . $f }} ">{{ $f }}</a>
+                                                <a href="{{ Request::root() }}/{{ $url . '/' . $app . '/' . $type . '/' . $f }} ">{{ $f }}</a>
                                             </li>
                                         @endforeach
                                     </ul>
@@ -140,7 +140,7 @@
             </div>
             <div class="modal-footer">
                 <a href="#" type="button" class="btn btn-default" data-dismiss="modal">No</a>
-                <a href="/{{$url . '/' . $path . '/' . $sapi_plain . '/' . $date . '/delete' }}" type="button" class="btn btn-primary" >Yes</a>
+                <a href="{{ Request::root() }}/{{$url . '/' . $path . '/' . $sapi_plain . '/' . $date . '/delete' }}" type="button" class="btn btn-primary" >Yes</a>
             </div>
         </div>
     </div>
