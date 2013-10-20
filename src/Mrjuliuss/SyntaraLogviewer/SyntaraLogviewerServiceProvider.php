@@ -1,4 +1,4 @@
-<?php namespace Mrjuliuss\SyntaraLogviewer;
+<?php namespace MrJuliuss\SyntaraLogviewer;
 
 use Illuminate\Support\ServiceProvider;
 use Config;
@@ -15,6 +15,7 @@ class SyntaraLogviewerServiceProvider extends ServiceProvider {
 	public function boot()
 	{
 		$this->package('mrjuliuss/syntara-logviewer');
+
 		// include start file
 		include ( __DIR__ . '/../../start.php');
 	}

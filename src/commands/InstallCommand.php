@@ -3,9 +3,6 @@
 namespace MrJuliuss\SyntaraLogviewer\Commands;
 
 use Illuminate\Console\Command;
-use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Input\InputArgument;
-use Sentry;
 
 class InstallCommand extends Command 
 {

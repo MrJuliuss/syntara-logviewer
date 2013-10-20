@@ -23,6 +23,9 @@
         "kmd/logviewer": "dev-master"
     },
     "autoload": {
+        "classmap": [
+            "src/commands"
+        ],
         "psr-0": {
             "Mrjuliuss\\SyntaraLogviewer": "src/"
         }
