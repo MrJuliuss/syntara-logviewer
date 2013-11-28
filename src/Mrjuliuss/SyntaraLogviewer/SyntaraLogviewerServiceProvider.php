@@ -27,7 +27,7 @@ class SyntaraLogviewerServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		//Load package config
+		// load package config
 		$this->app['config']->package('kmd/logviewer', 'kmd/logviewer/config');
 
 		$this->app['config']->set('logviewer::base_url', 'dashboard/logviewer');
@@ -35,13 +35,21 @@ class SyntaraLogviewerServiceProvider extends ServiceProvider {
 		$this->app['config']->set('logviewer::view', 'syntara-logviewer::viewer');
 		$this->app['config']->set('logviewer::log_order', 'desc');
 
-		 // add the install command to the application
+		// add the install command to the application
 		$this->app['logviewer:install'] = $this->app->share(function($app)
 		{
 			return new Commands\InstallCommand($app);
 		});
 
+		// add the update command to the application
+		$this->app['logviewer:update'] = $this->app->share(function($app)
+		{
+			return new Commands\UpdateCommand($app);
+		});
+
+		// add commands
 		$this->commands('logviewer:install');
+		$this->commands('logviewer:update');
 	}
 
 	/**
