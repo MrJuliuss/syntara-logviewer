@@ -41,7 +41,15 @@ class SyntaraLogviewerServiceProvider extends ServiceProvider {
 			return new Commands\InstallCommand($app);
 		});
 
+		// add the update command to the application
+		$this->app['logviewer:update'] = $this->app->share(function($app)
+		{
+			return new Commands\UpdateCommand($app);
+		});
+
+		// add commands
 		$this->commands('logviewer:install');
+		$this->commands('logviewer:update');
 	}
 
 	/**
