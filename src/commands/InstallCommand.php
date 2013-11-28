@@ -40,10 +40,10 @@ class InstallCommand extends Command
     {
         $this->info('## Syntara Logviewer Install ##');
 
-        // publish sentry config
+        // publish kmd logviewer config
         $this->call('config:publish', array('package' => 'kmd/logviewer' ) );
 
-        // publish syntara logviewerassets
+        // publish syntara logviewer assets
         $this->call('asset:publish', array('package' => 'mrjuliuss/syntara-logviewer' ) );
     }
 }
