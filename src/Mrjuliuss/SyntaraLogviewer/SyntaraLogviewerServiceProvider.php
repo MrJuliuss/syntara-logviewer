@@ -30,7 +30,7 @@ class SyntaraLogviewerServiceProvider extends ServiceProvider {
 		//Load package config
 		$this->app['config']->package('kmd/logviewer', 'kmd/logviewer/config');
 
-		$this->app['config']->set('logviewer::base_url', 'dashboard/logviewer');
+		$this->app['config']->set('logviewer::base_url', Config::get('syntara::config.uri').'/logviewer');
 		$this->app['config']->set('logviewer::filters.global', array('before' => 'basicAuth|hasPermissions:superuser'));
 		$this->app['config']->set('logviewer::view', 'syntara-logviewer::viewer');
 		$this->app['config']->set('logviewer::log_order', 'desc');

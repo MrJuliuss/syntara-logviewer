@@ -53,8 +53,7 @@ http://your-url/dashboard/logviewer
 ### Add logviewer to the navbar
 
 - If you already have a template for navigation : 
-
-add to your template
+-> add to your template
 
 ```@include('syntara-logviewer::navigation')```
 
