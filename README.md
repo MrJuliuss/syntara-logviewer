@@ -10,6 +10,10 @@ A Logviewer for [Syntara package](https://github.com/MrJuliuss/syntara), using [
 
 * Views and delete Laravel4 logs
 
+## TODO
+
+* i18n support
+
 ## Requirements
 * PHP 5.3+
 
@@ -55,7 +59,7 @@ http://your-url/dashboard/logviewer
 - If you already have a template for navigation : 
 -> add to your template
 
-```@include('syntara-logviewer::navigation')```
+@include('syntara-logviewer::navigation')
 
 - else : 
 

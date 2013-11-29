@@ -4,7 +4,7 @@ namespace MrJuliuss\SyntaraLogviewer\Commands;
 
 use Illuminate\Console\Command;
 
-class InstallCommand extends Command 
+class UpdateCommand extends Command 
 {
 
     /**
@@ -12,14 +12,14 @@ class InstallCommand extends Command
      *
      * @var string
      */
-    protected $name = 'logviewer:install';
+    protected $name = 'logviewer:update';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Syntara logviewer install command';
+    protected $description = 'Syntara logviewer update command';
 
     /**
      * Create a new command instance.
@@ -38,10 +38,7 @@ class InstallCommand extends Command
      */
     public function fire()
     {
-        $this->info('## Syntara Logviewer Install ##');
-
-        // publish kmd logviewer config
-        $this->call('config:publish', array('package' => 'kmd/logviewer' ) );
+        $this->info('## Syntara Logviewer Update ##');
 
         // publish syntara logviewer assets
         $this->call('asset:publish', array('package' => 'mrjuliuss/syntara-logviewer' ) );
