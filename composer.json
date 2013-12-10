@@ -1,6 +1,6 @@
 {
     "name": "mrjuliuss/syntara-logviewer",
-    "description": "Syntara Logviewer, a logviewer for Syntara admin package",
+    "description": "Logviewer for Syntara admin package",
     "keywords": [
         "laravel",
         "log viewer",
