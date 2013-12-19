@@ -13,6 +13,7 @@ A Logviewer for [Syntara package](https://github.com/MrJuliuss/syntara), using [
 ## TODO
 
 * i18n support
+* Laravel 4.1 support
 
 ## Requirements
 * PHP 5.3+
