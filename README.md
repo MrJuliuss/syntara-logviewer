@@ -12,7 +12,6 @@ A Logviewer for [Syntara package](https://github.com/MrJuliuss/syntara), using [
 
 ## TODO
 
-* fix pagination
 * i18n support
 * Laravel 4.1 support
 
