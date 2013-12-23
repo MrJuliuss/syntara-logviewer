@@ -13,10 +13,10 @@ A Logviewer for [Syntara package](https://github.com/MrJuliuss/syntara), using [
 ## TODO
 
 * i18n support
-* Laravel 4.1 support
 
 ## Requirements
 * PHP 5.3+
+
 
 ## Dependencies
 
@@ -25,9 +25,16 @@ A Logviewer for [Syntara package](https://github.com/MrJuliuss/syntara), using [
 
 ## Installation
 
+
 In the require key of composer.json file add the following line
 
-```"mrjuliuss/syntara-logviewer": "1.*"```
+If your application uses **Laravel 4.0** :
+
+```"mrjuliuss/syntara-logviewer": "1.0.*"```
+
+If your application uses **Laravel 4.1** :
+
+```"mrjuliuss/syntara-logviewer": "1.1.*"```
 
 Run the Composer update command
 
@@ -70,6 +77,30 @@ add to app/filters.php (or app/routes.php)
     {
         $view->nest('navPages', 'syntara-logviewer::navigation');
     });
+
+---------
+
+###A note about Laravel 4.1 ([mikemand](https://github.com/mikemand/logviewer) recommandation)
+
+As of right now (2013-11-29), fresh Laravel 4.1 applications log things differently than they used to. While this doesn't *technically* break LogViewer, LogViewer also doesn't know how to handle these changes. Whether these changes are permanent or not is unclear, but here's a quick fix:
+
+In your `app/start/global.php`, [line 34](https://github.com/laravel/laravel/blob/develop/app/start/global.php#L34) change:
+
+```php
+Log::useFiles(storage_path().'/logs/laravel.log');
+```
+
+to:
+
+```php
+$logFile = 'log-'.php_sapi_name().'.txt';
+
+Log::useDailyFiles(storage_path().'/logs/'.$logFile);
+```
+
+This only applies to new installations of Laravel 4.1. If you've upgraded an existing 4.0 application (and did not make changes to the way logs are created and stored), everything should still work.
+
+---------
 
 ### Others : 
 
