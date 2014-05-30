@@ -3,8 +3,6 @@
 @section('content')
 <link rel="stylesheet" href="{{ asset('packages/mrjuliuss/syntara-logviewer/assets/css/logs.css') }}" />
 
-<script src="{{ asset('packages/mrjuliuss/syntara-logviewer/assets/js/logs.js') }}"></script>
-
 <div class="container" id="main-container">
     <div class="row">
         <div class="col-lg-12">
