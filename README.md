@@ -26,6 +26,8 @@ In the require key of composer.json file add the following line
 
 If your application uses **Laravel 4.0** :
 
+**/!\ This branch is no longer maintained** 
+
 ```"mrjuliuss/syntara-logviewer": "1.0.*"```
 
 If your application uses **Laravel 4.1** :
